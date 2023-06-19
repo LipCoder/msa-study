@@ -3,6 +3,7 @@ package com.lipcoding.restfulwebservice.user;
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
+import javax.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +42,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);
 
         // 생성된 자원의 위치를 알려준다. (id)
