@@ -31,7 +31,7 @@ public class CustomizeResponseEntityExceptionHandler extends ResponseEntityExcep
     }
 
     /**
-     * Service Error
+     * Service Error (404)
      */
     @ExceptionHandler(UserNotFoundException.class)
     public final ResponseEntity<Object> handleUserNotFoundException(Exception ex, WebRequest request) {
@@ -41,6 +41,9 @@ public class CustomizeResponseEntityExceptionHandler extends ResponseEntityExcep
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
+    /**
+     * Client Error (400)
+     */
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
         MethodArgumentNotValidException ex,

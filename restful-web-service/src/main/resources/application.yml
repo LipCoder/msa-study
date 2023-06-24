@@ -1,7 +1,28 @@
 # spring boot configuration
+
+# 서버 기본 설정
 server:
   port: 8088
 
+# 로깅 설정
 logging:
   level:
-    org.springframework: INFO
+    org.springframework: DEBUG
+
+# 스프링 관련 설정
+spring:
+  # 다국어(locale) 처리
+  messages:
+    basename: messages
+  # security 설정
+  security:
+    user:
+      name: username
+      password: passw0rd
+
+# Actuator 설정
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
