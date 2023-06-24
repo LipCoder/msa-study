@@ -15,10 +15,18 @@ spring:
   messages:
     basename: messages
   # security 설정
-  security:
-    user:
-      name: username
-      password: passw0rd
+#  security:
+#    user:
+#      name: username
+#      password: passw0rd
+  # JPA 설정
+  jpa:
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+
 
 # Actuator 설정
 management:
